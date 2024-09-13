@@ -3,28 +3,37 @@ package sasuman;
 import java.util.Scanner;
 
 public class Salary {
-    public Salaries createSalaries() {
+    public void gatherDetails() {
         Scanner input = new Scanner(System.in);
 
-        
-        Salaries salaries = new Salaries();
+        System.out.print("Enter number of Employees: ");
+        int numEmployees = input.nextInt();
+        input.nextLine();
 
-      
-        System.out.print("Enter your name: ");
-        String name = input.nextLine();
-        System.out.print("Enter age: ");
-        int age = input.nextInt();
-        System.out.print("Enter rate per hour: ");
-        double rate = input.nextDouble();
-        System.out.print("Enter total hours worked: ");
-        double hours = input.nextDouble();
-        System.out.print("Enter total deduction: ");
-        double deductions = input.nextDouble();
+        for (int i = 0; i < numEmployees; i++) {
+            System.out.println("Enter details for employee " + (i + 1));
 
-        salaries.setDetails(name, age, rate, hours, deductions);
+            System.out.print("Enter worker name: ");
+            String workerName = input.nextLine();
+            System.out.print("Enter worker age: ");
+            int workerAge = input.nextInt();
+            System.out.print("Enter hourly rate: ");
+            double wageRate = input.nextDouble();
+            System.out.print("Enter total hours worked: ");
+            double hoursWorked = input.nextDouble();
+            System.out.print("Enter total deductions: ");
+            double deductions = input.nextDouble();
+            input.nextLine();
 
+            Salaries salaryDetails = new Salaries();
+            salaryDetails.recordDetails(workerName, workerAge, wageRate, hoursWorked, deductions);
+        }
+
+       
+        Salaries.displayTable();
+        Salaries.displayTotals();
         input.close();
-
-        return salaries;
     }
+
+ 
 }

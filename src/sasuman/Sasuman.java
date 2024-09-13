@@ -11,10 +11,9 @@ public class Sasuman {
         /* Grade gradeManager = new Grade();
         gradeManager.getGrades();*/
         
-        
-        /* Salary salaryHandler = new Salary();
-        Salaries salaries = salaryHandler.createSalaries();
-        salaries.displaySlip();*/ 
+        /*
+        Salary salaryInput = new Salary();
+        salaryInput.gatherDetails();*/
       
         
        
